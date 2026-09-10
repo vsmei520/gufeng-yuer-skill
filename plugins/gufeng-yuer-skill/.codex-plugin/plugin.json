@@ -1,19 +1,17 @@
 {
   "name": "gufeng-yuer-skill",
-  "version": "1.2.0",
-  "description": "曾美团队·育儿国风穿越远程创作插件",
-  "author": {
-    "name": "曾美团队"
-  },
+  "version": "1.3.0",
+  "description": "曾美团队·抖音 AI 短剧远程创作插件",
+  "author": {"name": "曾美团队"},
   "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "曾美团队-育儿国风穿越",
-    "shortDescription": "古今对话短剧 AI 视频生产系统",
-    "longDescription": "通过远程服务完成古今对话短剧创作。用户只需使用手机号和授权码激活，输入选题与初步构思即可开始分阶段创作。核心规则不存放在本地插件中。",
+    "displayName": "曾美团队-抖音 AI 短剧生产",
+    "shortDescription": "选题到 Seedance 的远程授权工作流",
+    "longDescription": "通过远程 MCP 服务完成抖音 AI 短剧创作，核心规则不存放在本地插件中。",
     "developerName": "曾美团队",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "启动曾美团队·育儿国风穿越，帮我生成一个古今对话短剧。"
-  },
-  "mcpServers": "./.mcp.json"
+    "defaultPrompt": "使用抖音 AI 短剧生产工作流。"
+  }
 }

@@ -1,20 +1,10 @@
 {
   "name": "gufeng-yuer-skill",
-  "interface": {
-    "displayName": "曾美团队·育儿国风穿越"
-  },
-  "plugins": [
-    {
-      "name": "gufeng-yuer-skill",
-      "source": {
-        "source": "local",
-        "path": "./plugins/gufeng-yuer-skill"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    }
-  ]
+  "interface": {"displayName": "曾美团队·抖音 AI 短剧生产"},
+  "plugins": [{
+    "name": "gufeng-yuer-skill",
+    "source": {"source": "local", "path": "./plugins/gufeng-yuer-skill"},
+    "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+    "category": "Productivity"
+  }]
 }

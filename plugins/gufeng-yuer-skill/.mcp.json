@@ -1,13 +1,10 @@
 {
   "mcpServers": {
-    "guoxue-chuanyue": {
+    "gufeng-yuer-skill": {
       "type": "http",
       "url": "https://guoxue.073955.com/mcp",
       "auth": "oauth",
-      "enabled_tools": [
-        "get_guoxue_chuanyue_main_workflow",
-        "get_guoxue_chuanyue_examples_workflow"
-      ],
+      "enabled_tools": ["get_douyin_ai_drama_workflow"],
       "startup_timeout_sec": 20,
       "tool_timeout_sec": 120
     }
