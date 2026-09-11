@@ -1,8 +1,12 @@
 {
   "name": "gufeng-yuer-skill",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "曾美团队·抖音 AI 短剧远程创作插件",
   "author": {"name": "曾美团队"},
+  "homepage": "https://guoxue.073955.com",
+  "repository": "https://github.com/vsmei520/gufeng-yuer-skill",
+  "license": "Proprietary",
+  "keywords": ["douyin", "ai-drama", "seedance"],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
@@ -10,8 +14,11 @@
     "shortDescription": "选题到 Seedance 的远程授权工作流",
     "longDescription": "通过远程 MCP 服务完成抖音 AI 短剧创作，核心规则不存放在本地插件中。",
     "developerName": "曾美团队",
+    "websiteURL": "https://guoxue.073955.com",
+    "privacyPolicyURL": "https://guoxue.073955.com/privacy",
+    "termsOfServiceURL": "https://guoxue.073955.com/terms",
     "category": "Productivity",
     "capabilities": [],
-    "defaultPrompt": "使用抖音 AI 短剧生产工作流。"
+    "defaultPrompt": ["使用抖音 AI 短剧生产工作流。", "按固定流程根据我的选题和构思制作抖音 AI 短剧。"]
   }
 }
