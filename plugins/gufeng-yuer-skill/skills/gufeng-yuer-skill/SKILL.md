@@ -33,9 +33,10 @@ description: 曾美团队·抖音 AI 短剧远程创作入口。调用远程 MCP
 
 启动后如果服务返回 `requires_submission=true`，必须根据用户输入和当前阶段规则生成完整业务成果。不能把 `hook_report`、`structure_timing`、`requires_submission`、`requires_confirmation` 等内部字段当成回复，也不能只说“工作流已启动”或只显示确认按钮。先生成完整正文，调用同一工具的 `action=submit_stage` 登记与将要展示的完全相同的正文，再把该正文直接展示给用户，并在正文末尾询问确认。
 第一阶段必须直接输出图二所示的业务报告，至少包含 `目标用户痛点与共鸣点`、`黄金3秒视觉钩子方案`、`“13秒内在吸引力”节点预设计`；只有预计时长达到或超过3分钟时才增加 `长视频升华预案`。报告要结合用户给出的选题、主攻方向、主题和脚本结构构思具体展开，不能输出空模板、工程说明或内部状态。
-用户回复“确认”后才调用 `action=confirm`。如果返回的下一阶段仍为 `requires_submission=true`，必须立即生成下一阶段的完整正文，登记后直接展示正文，再等待用户确认。后续阶段必须按服务器返回的契约逐步输出：结构与时长精算、完整四列脚本、V4 精修计划与自动分段、V4 单段精修、V4 全篇整合、引擎选择、场景/人物多视图/站位资产、Seedance 第零阶段诊断、Seedance 第一阶段拆解、Seedance 单段提示词、Seedance 最终校验、最终发布包。只有阶段正文已经展示并登记后才能询问确认或下一步选择。
-提交 `v4_plan` 或 `seedance_stage1_analysis` 时，必须把分段总数作为 `total_segments` 一并提交。提交 `v4_segment` 或 `seedance_segment` 时，按服务器契约中的 `current_segment` 只输出当前段，并可携带 `segment_index`。用户说“确认”或“继续”后才进入下一段；不得把多段结果合并成一次无确认交付，也不得跳过 V4 全篇整合、Seedance 第零阶段/第一阶段/最终校验。
+用户回复“确认”后才调用 `action=confirm`。如果返回的下一阶段仍为 `requires_submission=true`，必须立即生成下一阶段的完整正文，登记后直接展示正文，再等待用户确认。后续阶段必须按服务器返回的契约逐步输出：结构与时长精算、完整四列脚本、V4 精修计划与自动分段、V4 单段精修、V4 全篇整合、引擎选择、场景/人物多视图/站位资产、Seedance 第零阶段画面合理性诊断与评分、Seedance 单段提示词、Seedance 最终校验、最终发布包。只有阶段正文已经展示并登记后才能询问确认或下一步选择。
+提交 `v4_plan` 或 `seedance_zero_diagnosis` 时，必须把分段总数作为 `total_segments` 一并提交。提交 `v4_segment` 或 `seedance_segment` 时，按服务器契约中的 `current_segment` 只输出当前段，并可携带 `segment_index`。用户说“确认”或“继续”后才进入下一段；不得把多段结果合并成一次无确认交付，也不得跳过 V4 全篇整合、Seedance 第零阶段诊断评分或最终校验。Seedance 阶段的正确顺序是：资产提示词确认后，只输出 `第零阶段：画面合理性诊断与评分`；用户确认后，才输出 `Seedance 2.5 提示词·第1段` 或 `Seedance 2.0 提示词·第1段`。
 工具调用结果只用于内部推进和读取契约；对用户的回复只保留当前阶段的业务成果和必要的确认问题。不要向用户展示原始 JSON、阶段英文名、工具加载记录、对标 Skill 名称或“已进入下一阶段”的空消息。
+用户可见正文中禁止出现 `<thinking>`、`</thinking>`、`运行了命令`、`已读取文件运行了命令`、`List MCP resources` 等内部痕迹。Seedance 单段阶段禁止使用“Seedance 成片提示词与校验”或“分段 Seedance 提示词”总标题来一次性输出多个段落；标题必须类似 `Seedance 2.5 提示词·第1段`，并且本轮只给当前段。
 
 最终发布包交付协议：当 `action=publish` 返回 `published=true` 时，必须把返回的
 `publish_package` 完整展示给用户，不能只说“发布包已登记成功”。依次输出完整的
